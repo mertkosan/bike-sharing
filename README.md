@@ -1,2 +1,9 @@
-# bike-sharing
-A Network Flow Approach to Bike Sharing
+# A Network Flow Approach to Bike Sharing
+
+## Problem Description:
+
+A basic model of bike sharing consists of n fixed locations where bikes are supplied or demanded. A bike trip consists of a user picking up a bike at one of these locations i and riding to another location j. Since users make these trips at different times, we assume that time is divided into a fixed number of slots, say, k. When a user picks up a bike at location i in time slot t, and deposits it at location j, the bike becomes part of node j's supply for time slot t + 1. We assume each day begins with time slot 1 and ends with time slot k.
+
+Thus, throughout the day, the bike trips by the users redistribute the bikes among these locations. We consider this redistribution of the bike supply as free of cost: this is just a side effect of the users of the system. However, these trips can invariably lead to bikes being at wrong places at wrong times, and therefore a secondary mechanism is needed to move bikes to locations with future demand. We model this as a bike transport feature that can pick up bikes from any of the locations and move them to other locations at a fixed cost of $b per bike. We assume that the bike transport service is only available two times a day, say, between time slots k/2 and k/2+1, and between time slots k and 1 (overnight). (That is, we invoke the bike transport service once in the middle of the day, and once at the end of the day.) We can simplify the problem by assuming that bike transfer service is instantaneous, meaning it takes zero time to run.
+
+Your job is to build a bike sharing application, which takes as input a set of demands and supplies, for each time slot and location, and constructs a cost-minimizing bike transport schedule that gives a feasible circulation. You should make a reasonable set of assumption about the demand and supply, and the number of bikes available, as well as the cost parameter $b of the bike transport system. The theoretical part of the project should explain how the problem is modeled as a form of network flow, and the experimental part should, among other things, explore the effects of varying these parameters (demand, supply, number of bikes etc.)
